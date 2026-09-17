@@ -1,0 +1,123 @@
+body {
+    background-image: url('../images/websiteBackgroung3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar { 
+  background:#111; 
+  padding:15px; 
+  display:flex; 
+  gap:20px; 
+  border-bottom:2px solid rgb(255, 166, 0);
+}
+
+.navbar a { 
+  color:white; 
+  text-decoration:none;
+}
+
+.logoText {
+  text-align: center;
+  color: azure;
+}
+
+.Text {
+    text-align: center;
+    color: azure;
+}
+
+.footer {
+    text-align: center;
+    color: azure;
+}
+
+.btn-parts{
+  display:block;
+  background:rgb(255, 166, 0);
+  color:#000;
+  text-decoration:none;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn-parts:hover{
+  background:#fff;
+}
+
+.parts-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.part-card{
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+.part-card:hover{
+  transform: translateY(-8px);
+  border-color: #ff6600;
+  box-shadow: 0 0 20px rgba(255,102,0,0.5);
+}
+.part-card img{
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+.part-card h3{
+  color: #000;
+  margin: 15px 0 5px 0;
+  font-size: 18px;
+}
+.price{
+  color: #ff6600;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5px 0 15px 0;
+}
+.btn-cart{
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-cart:hover{
+  background: #000;
+}
+
+@media(max-width:768px){
+  .parts-container{ grid-template-columns: 1fr; }
+}
+
+.location-card{
+  width: 100%;
+  max-width: 450px;
+}
+
+.parts-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px){
+  .main-title{ font-size: 24px; }
+  .parts-container{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px){
+  .parts-container{ grid-template-columns: 1fr; }
+  .location-header h3{ font-size: 16px; }
+  .btn-cart{ width: 100%; }
+}
