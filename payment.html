@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart and Payment | Pretoria Auto Spares Hub</title>
+  <meta name="description" content="Review your cart, see the cost of each item with VAT and delivery, and pay for your car parts from Pretoria Auto Spares Hub.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Pretoria Auto Spares Hub Pty Ltd">
+  <meta name="theme-color" content="#111111">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co mailto:; base-uri 'self'; object-src 'none'">
+  <link rel="canonical" href="https://pretoria-auto-spares-hub.netlify.app/payment.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pretoria Auto Spares Hub">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Cart and Payment | Pretoria Auto Spares Hub">
+  <meta property="og:description" content="Review your cart, see the cost of each item with VAT and delivery, and pay for your car parts from Pretoria Auto Spares Hub.">
+  <meta property="og:url" content="https://pretoria-auto-spares-hub.netlify.app/payment.html">
+  <meta property="og:image" content="https://pretoria-auto-spares-hub.netlify.app/images/pretoria-auto-spares-hub-logo.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <img class="site-header__logo" src="images/pretoria-auto-spares-hub-logo.jpg" alt="Pretoria Auto Spares Hub logo" width="40" height="40">
+        <span>Pretoria Auto Spares Hub</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li><a class="site-nav__link" href="products-services.html">Products/Services</a></li>
+          <li><a class="site-nav__link" href="parts.html">Parts</a></li>
+          <li><a class="site-nav__link" href="about-us.html">About Us</a></li>
+          <li><a class="site-nav__link" href="enquiry.html">Enquiry</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+          <li><a class="site-nav__link" href="payment.html" aria-current="page">Cart<span class="cart-count" hidden aria-label="items in cart">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+      <div class="page-title">
+        <h1>Cart and Payment</h1>
+        <p class="lead lead--centered">Check the cost of each item, then choose how you want to receive and pay for your parts.</p>
+      </div>
+
+      <section class="panel text-center" id="cart-empty">
+        <h2>Your cart is empty</h2>
+        <p>Browse our parts and select Add to Cart to see the cost here.</p>
+        <a class="btn" href="parts.html">Browse Parts</a>
+      </section>
+
+      <div class="checkout-layout" id="checkout-area" hidden>
+        <div>
+          <section class="panel" id="cart-panel" aria-labelledby="cart-title">
+            <h2 id="cart-title">Your Cart</h2>
+            <ul class="cart-list" id="cart-list"></ul>
+          </section>
+
+          <form class="panel section form" id="payment-form" action="payment.html" method="post" novalidate>
+            <div class="form">
+              <h2>Your details</h2>
+      <div class="form__group">
+        <label class="form__label" for="fullName">Full name</label>
+        <input class="form__field" id="fullName" name="fullName" type="text" required data-label="Full name" autocomplete="name" minlength="2" maxlength="60" data-rule="person-name">
+        <p class="form__error" id="fullName-error" aria-live="polite"></p>
+      </div>
+        <div class="form__row form__row--two">
+      <div class="form__group">
+        <label class="form__label" for="email">Email address</label>
+        <input class="form__field" id="email" name="email" type="email" required data-label="Email address" autocomplete="email" maxlength="100">
+        <p class="form__error" id="email-error" aria-live="polite"></p>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="phone">Phone number</label>
+        <input class="form__field" id="phone" name="phone" type="tel" required data-label="Phone number" autocomplete="tel" inputmode="tel" maxlength="16" data-rule="sa-phone" placeholder="071 234 5678">
+        <p class="form__error" id="phone-error" aria-live="polite"></p>
+      </div>
+        </div>
+            </div>
+
+                  <div class="form__group">
+        <fieldset class="form__choices" id="fulfilment">
+          <legend class="form__legend">Collection or delivery?</legend>
+          <label class="form__choice"><input type="radio" name="fulfilment" value="collection" checked> Collect from the shop (free)</label>
+          <label class="form__choice"><input type="radio" name="fulfilment" value="delivery"> Deliver to me</label>
+        </fieldset>
+        <p class="form__error" id="fulfilment-error" aria-live="polite"></p>
+      </div>
+
+            <div id="address-fields" class="form" hidden>
+              <h3>Delivery address</h3>
+      <div class="form__group">
+        <label class="form__label" for="street">Street address</label>
+        <input class="form__field" id="street" name="street" type="text" required data-label="Street address" autocomplete="street-address" minlength="5" maxlength="100">
+        <p class="form__error" id="street-error" aria-live="polite"></p>
+      </div>
+        <div class="form__row form__row--two">
+      <div class="form__group">
+        <label class="form__label" for="suburb">Suburb</label>
+        <input class="form__field" id="suburb" name="suburb" type="text" required data-label="Suburb" autocomplete="address-level3" minlength="2" maxlength="60">
+        <p class="form__error" id="suburb-error" aria-live="polite"></p>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="city">City</label>
+        <input class="form__field" id="city" name="city" type="text" required data-label="City" autocomplete="address-level2" minlength="2" maxlength="60" value="Pretoria">
+        <p class="form__error" id="city-error" aria-live="polite"></p>
+      </div>
+        </div>
+      <div class="form__group">
+        <label class="form__label" for="postalCode">Postal code</label>
+        <input class="form__field" id="postalCode" name="postalCode" type="text" required data-label="Postal code" autocomplete="postal-code" inputmode="numeric" maxlength="4" data-rule="postal-code">
+        <p class="form__error" id="postalCode-error" aria-live="polite"></p>
+      </div>
+            </div>
+
+        <div class="form__group">
+          <fieldset class="form__choices" id="paymentMethod">
+            <legend class="form__legend">Payment method</legend>
+            <label class="form__choice"><input type="radio" name="paymentMethod" value="card" checked> Card</label>
+            <label class="form__choice"><input type="radio" name="paymentMethod" value="eft"> EFT</label>
+            <label class="form__choice" id="cash-choice"><input type="radio" name="paymentMethod" value="cash"> Cash on collection</label>
+          </fieldset>
+          <p class="form__error" id="paymentMethod-error" aria-live="polite"></p>
+        </div>
+
+            <div id="card-fields" class="form">
+              <h3>Card details</h3>
+      <div class="form__group">
+        <label class="form__label" for="cardName">Name on card</label>
+        <input class="form__field" id="cardName" name="cardName" type="text" required data-label="Name on card" autocomplete="cc-name" minlength="2" maxlength="60" data-rule="person-name">
+        <p class="form__error" id="cardName-error" aria-live="polite"></p>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="cardNumber">Card number</label>
+        <input class="form__field" id="cardNumber" name="cardNumber" type="text" required data-label="Card number" autocomplete="cc-number" inputmode="numeric" maxlength="23" placeholder="1234 5678 9012 3456" data-rule="card-number">
+        <p class="form__error" id="cardNumber-error" aria-live="polite"></p>
+      </div>
+        <div class="form__row form__row--two">
+      <div class="form__group">
+        <label class="form__label" for="cardExpiry">Expiry date (MM/YY)</label>
+        <input class="form__field" id="cardExpiry" name="cardExpiry" type="text" required data-label="Expiry date" autocomplete="cc-exp" inputmode="numeric" maxlength="5" placeholder="08/29" data-rule="card-expiry">
+        <p class="form__error" id="cardExpiry-error" aria-live="polite"></p>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="cardCvv">Security code (CVV)</label>
+        <input class="form__field" id="cardCvv" name="cardCvv" type="text" required data-label="Security code" autocomplete="cc-csc" inputmode="numeric" maxlength="4" minlength="3" placeholder="123" pattern="[0-9]{3,4}" data-pattern-message="Enter the 3 or 4 digit code on your card.">
+        <p class="form__error" id="cardCvv-error" aria-live="polite"></p>
+      </div>
+        </div>
+            </div>
+            <p id="eft-info" class="form-status" hidden>Choose EFT and use your order reference as the payment reference.</p>
+            <p id="cash-info" class="form-status" hidden>You will pay in store when you collect your parts.</p>
+
+            <p class="form__hint">This is a demonstration checkout for a student project. No payment is taken, and card details are checked in your browser only. They are never stored or sent anywhere.</p>
+            <p id="payment-status" class="form-status" role="alert" hidden></p>
+          </form>
+        </div>
+
+        <aside class="panel checkout-layout__summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Order Summary</h2>
+          <dl class="totals">
+            <div class="totals__row"><dt>Items total</dt><dd id="total-subtotal">R0.00</dd></div>
+            <div class="totals__row"><dt>Delivery</dt><dd id="total-delivery">R0.00</dd></div>
+            <div class="totals__row"><dt>VAT included (15%)</dt><dd id="total-vat">R0.00</dd></div>
+            <div class="totals__row totals__row--grand"><dt>Total to pay</dt><dd id="total-grand">R0.00</dd></div>
+          </dl>
+          <p class="text-muted" id="delivery-note"></p>
+          <button class="btn btn--cart" type="submit" form="payment-form" id="place-order">Place order</button>
+        </aside>
+      </div>
+
+      <section class="panel order-confirmation section" id="order-confirmation" aria-live="polite" hidden></section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="site-footer__nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="products-services.html">Products/Services</a>
+      <a href="parts.html">Parts</a>
+      <a href="about-us.html">About Us</a>
+      <a href="enquiry.html">Enquiry</a>
+      <a href="contact.html">Contact</a>
+      <a href="payment.html">Cart</a>
+    </nav>
+    <p>Silverton Industrial Park, 319 Pretoria Rd, Silverton, Pretoria, 0184</p>
+    <p>Phone <a href="tel:+27128045521">012 804 5521</a> | WhatsApp <a href="https://wa.me/27712345678" target="_blank" rel="noopener noreferrer">071 234 5678</a></p>
+    <p class="site-footer__social"><a href="https://www.instagram.com/mk1_lgnds?igsh=MTE3cXRtYjY5ZGNpOQ==" target="_blank" rel="noopener noreferrer">Follow us on Instagram</a></p>
+    <p class="site-footer__copy">Pretoria Auto Spares&reg; 2026&copy;</p>
+  </footer>
+
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/validation.js" defer></script>
+  <script src="js/payment.js" defer></script>
+</body>
+</html>

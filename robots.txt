@@ -1,0 +1,6 @@
+# Pretoria Auto Spares Hub - crawler instructions
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://pretoria-auto-spares-hub.netlify.app/sitemap.xml
