@@ -5,8 +5,8 @@ Website for a family-owned car parts supplier in Silverton, Pretoria.
 - **Student number:** ST10527278
 - **Module:** WEDE5020 Portfolio of Evidence
 - **Current stage:** Part 3 - Enhancing Functionality and SEO
-- **Live site:** add the Netlify link here after deployment
-- **Repository:** add the GitHub link here
+- **Live site:**  
+- **Repository:** https://github.com/tlhabanetsh3po06/tlhabane_ST10527278_WEDNE5020_POE
 
 ---
 
